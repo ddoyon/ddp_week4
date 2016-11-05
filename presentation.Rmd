@@ -1,0 +1,58 @@
+---
+title: "Developing Data Products: Course Project"
+date: November 6, 2016
+output:
+  revealjs::revealjs_presentation:
+    theme: black
+    highlight: pygments
+    css: custom.css
+    center: true
+    transition: slide
+    incremental: true
+    slide_level: 1
+---
+
+# Fantasy Football
+
+Fantasy football is a very popular game in the United States (especially among my 30 year old males like myself).
+
+Points are based on the actual performances of the NFL players in real-world competition.  The objective is to assemble the best roster each week.
+
+**How do you choose the best players?**
+
+
+
+# Wisdom of the Crowd
+
+One approach to assembling the best roster is to average "expert" opinions.  This method is called the "wisdom of the crowd."
+
+> A large group's aggregated answers to questions involving quantity estimation ... has generally been found to be as good as, and often better than, the answer given by any of the individuals within the group.  [wikipedia](https://en.wikipedia.org/wiki/Wisdom_of_the_crowd)
+
+
+# ffanalytics
+
+Fortunately, as is often the case with R, someone has already written a package to download expert projections.  This package is called `ffanalytics` and it was created by the fine folks at [Fantasy Football Analytics](http://fantasyfootballanalytics.net/).  You can read more about their package [here](http://fantasyfootballanalytics.net/2016/06/ffanalytics-r-package-fantasy-football-data-analysis.html).
+
+
+
+# Sample data
+<small>As a demonstration of embedded R code in this presentation, here are the top 5 projected running backs for this week.  The mean projections for every position plus error bounds are viewable in the [Shiny app](http://ddoyon.shinyapps.io/developing_data_products_course_project ).</small>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(knitr)
+source("data.R")
+
+x <- return_clean_projections(week = 9, pos = "RB", num = 5) %>%
+        select(player, team, lower, points, upper)
+
+knitr::kable(x, format = "html", align = "c", digits = 2)
+
+```
+
+
+
+
+# {data-background="giphy.gif"}
+
+## Go Eagles {#kelly-green}

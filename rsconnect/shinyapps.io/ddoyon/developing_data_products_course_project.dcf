@@ -1,0 +1,11 @@
+name: developing_data_products_course_project
+title: Developing Data Products: Course Project
+account: ddoyon
+server: shinyapps.io
+appId: 135850
+bundleId: 606270
+url: https://ddoyon.shinyapps.io/developing_data_products_course_project/
+when: 1478319592.51875
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: custom.css|presentation.Rmd|ignore/giphy.gif|ignore/myProjections8.RDS|ignore/projectedPoints.csv|ignore/projections.R|ignore/scrapeData8.RDS|ignore/scrapeData9.RDS
